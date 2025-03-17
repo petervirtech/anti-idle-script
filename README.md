@@ -17,7 +17,7 @@ This Python script prevents system idling by **pressing keys and moving the mous
 ### **1️⃣ Clone the Repository**
 
 ```bash
-git clone https://github.com/yourusername/anti-idle-script.git
+git clone https://github.com/petervirtech/anti-idle-script.git
 cd anti-idle-script
 ```
 
