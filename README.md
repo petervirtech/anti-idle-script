@@ -2,6 +2,10 @@
 
 This Python script prevents system idling by **pressing keys and moving the mouse** at regular intervals.
 
+##❓ Why Use This Script?
+
+Many systems automatically go into sleep or lock mode after a period of inactivity, which can be disruptive during long-running remote sessions, unattended downloads, or background processing tasks. This script ensures your system stays active without requiring third-party tools like Caffeine or other system tray applications that may consume additional resources or clutter your workflow. It provides a lightweight, customizable, and scriptable alternative for keeping your system awake.
+
 ## 📌 Features
 
 ✅ Runs **until a specified time** or **indefinitely**\
