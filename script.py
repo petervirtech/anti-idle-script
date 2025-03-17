@@ -8,20 +8,20 @@ def parse_end_time(time_str: str):
     """
     Parses a time string (HH:MM) and returns the corresponding datetime object for today.
     If the time has already passed today, it assumes the next day.
-    
+
     Returns None if the input is empty (run indefinitely).
     """
     if not time_str:
         return None  # Run indefinitely if no input is given
-    
+
     try:
         now = datetime.datetime.now()
         end_time = datetime.datetime.strptime(time_str, "%H:%M").replace(year=now.year, month=now.month, day=now.day)
-        
+
         # If the time has already passed today, assume it's for the next day
         if end_time < now:
             end_time += datetime.timedelta(days=1)
-        
+
         return end_time
     except ValueError:
         ic("Invalid time format. Please enter time as HH:MM.")
@@ -31,12 +31,12 @@ def run_script(end_time=None):
     """
     Runs the script until the specified end time (datetime object).
     If no end time is provided, it runs indefinitely.
-    
+
     The script presses 'junja', moves the mouse slightly, and logs activity.
     """
     start_time = datetime.datetime.now()
     p.FAILSAFE = False  # Prevent script interruption due to PyAutoGUI failsafe
-    
+
     ic(f"Script started at {start_time.strftime('%Y-%m-%d %H:%M:%S')}")
     if end_time:
         ic(f"Will run until {end_time.strftime('%Y-%m-%d %H:%M:%S')}")
@@ -54,7 +54,7 @@ def run_script(end_time=None):
         time.sleep(5)
         p.moveRel(0, -1)
         p.press('junja')
-        
+
         now = datetime.datetime.now()
         ic(f"Step {step} at {now.strftime('%Y-%m-%d %H:%M:%S')}")
 
