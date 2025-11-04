@@ -25,31 +25,16 @@ git clone https://github.com/petervirtech/anti-idle-script.git
 cd anti-idle-script
 ```
 
-### **2️⃣ Create a Virtual Environment**
+### **2️⃣ Create a Virtual Environment & Install Dependencies**
 
-Creating a virtual environment ensures dependencies don't interfere with other Python projects.
-
-#### **Windows**
+`uv` can create a virtual environment and install dependencies in one step.
 
 ```bash
-python -m venv venv
-venv\Scripts\activate
+uv venv
+uv pip install -r requirements.txt
 ```
 
-#### **Mac/Linux**
-
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-### **3️⃣ Install Dependencies**
-
-```bash
-pip install -r requirements.txt
-```
-
-💡 **Note:** Each time you work on this project, remember to **activate the virtual environment** (`source venv/bin/activate` or `venv\Scripts\activate`).
+💡 **Note:** When using `uv run`, the virtual environment is automatically activated. If you need to activate it manually (e.g., for other `pip` commands), use `source venv/bin/activate` (Mac/Linux) or `venv\Scripts\activate` (Windows).
 
 ---
 
@@ -58,7 +43,7 @@ pip install -r requirements.txt
 ### **1️⃣ Run via Command Line**
 
 ```bash
-python script.py 17:30
+uv run python main.py 17:30
 ```
 
 - Runs until **17:30** today (or tomorrow if 17:30 has passed).
@@ -66,7 +51,7 @@ python script.py 17:30
 ### **2️⃣ Run Interactively**
 
 ```bash
-python script.py
+uv run python main.py
 ```
 
 - Prompts:
@@ -86,9 +71,9 @@ python script.py
 
 - If you see an **invalid time format error**, ensure you're entering the time as **HH****:MM** (24-hour format).
 - If `pyautogui` doesn't work, ensure your system allows **keyboard and mouse control**.
-- If you installed dependencies outside the virtual environment, run:
+- If you need to reinstall dependencies, run:
   ```bash
-  pip install --upgrade --force-reinstall -r requirements.txt
+  uv pip install --upgrade --force-reinstall -r requirements.txt
   ```
 
 ---

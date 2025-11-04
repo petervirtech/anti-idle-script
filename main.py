@@ -67,10 +67,9 @@ if __name__ == "__main__":
     # Check if a time was provided as a command-line argument
     end_time = None
     if len(sys.argv) > 1:
-        end_time = parse_end_time(sys.argv[1])
+        end_time = parse_end_time(sys.argv)
     else:
         user_input = input("Enter end time (HH:MM) or press Enter to run indefinitely: ").strip()
         end_time = parse_end_time(user_input)
 
     run_script(end_time)
-
